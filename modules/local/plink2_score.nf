@@ -43,7 +43,7 @@ process PLINK2_SCORE {
 
     // if we have allelic frequencies or enough samples don't do mean imputation and skip freq-calc
     def no_imputation = ((ref_afreq.name == 'NO_FILE') && (meta.n_samples.toInteger() < 50)) ? "no-mean-imputation" : ""
-    def error_on_freq_calc = (no_imputation == "no-mean-imputation") ? "--error-on-freq-calc" : ""
+    def error_on_freq_calc = (no_imputation == "no-mean-imputation") ? "" : ""
 
     def cols = 'header-read cols=+scoresums,+denom,-fid'
     def recessive = (scoremeta.effect_type == 'recessive') ? ' recessive ' : ''
