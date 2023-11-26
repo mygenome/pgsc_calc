@@ -33,8 +33,7 @@ process DOWNLOAD_SCOREFILES {
         $publication_args \
         $efo_direct \
         -b $build \
-        -o \$PWD -v \
-        -c pgsc_calc/$workflow.manifest.version
+        -o \$PWD -v
 
     cat <<-END_VERSIONS > versions.yml
     ${task.process.tokenize(':').last()}:
